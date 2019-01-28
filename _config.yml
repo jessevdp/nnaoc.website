@@ -1,5 +1,8 @@
 safe: true
 strict_front_matter: true
+timezone: "Europe/Amsterdam"
+
+title: "NNAOC"
 
 # Build settings
 markdown: kramdown
