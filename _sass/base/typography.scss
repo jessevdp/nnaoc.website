@@ -16,13 +16,20 @@ body {
 
 p {
   font-size: 1.6rem;
-  padding-top: map-get($spacers, 2);
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 2);
+  }
 }
 
 h1 {
   font-size: 4.8rem;
-  padding-top: map-get($spacers, 5);
+  margin-bottom: map-get($spacers, 2);
+
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 5);
+  }
 }
+
 h2 {
   font-size: 3.2rem;
 }
@@ -32,15 +39,22 @@ h3 {
 
 h2,
 h3 {
-  padding-top: map-get($spacers, 4);
+  margin-bottom: map-get($spacers, 2);
+
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 4);
+  }
 }
 
 h4,
 h5,
 h6 {
   @include secondary-font;
-  padding-top: map-get($spacers, 3);
-  padding-bottom: map-get($spacers, 2);
+  margin-bottom: map-get($spacers, 2);
+
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 3);
+  }
 }
 
 h4 {
