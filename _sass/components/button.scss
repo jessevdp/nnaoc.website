@@ -26,6 +26,12 @@ input[type="reset"].btn {
   background-color: transparent;
   border: 1px solid transparent;
 
+  /* ======================= *
+   *  VARIANTS
+   * ======================= */
+
+  // Color variants
+
   &.btn-primary {
     color: $on-primary;
     background: $primary;
@@ -79,5 +85,18 @@ input[type="reset"].btn {
       padding-top: map-get($spacers, 3);
       padding-bottom: map-get($spacers, 3);
     }
+  }
+
+  /* ======================= *
+   *  INTERACTIVE STATES
+   * ======================= */
+
+  // Disabled
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
   }
 }
