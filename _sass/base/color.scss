@@ -4,14 +4,30 @@ html,
 body,
 :root {
   background: $background;
-}
-
-.t-regular {
-  color: $on-background;
-}
-.t-secondary {
   color: $on-background--secondary;
 }
+
+@mixin primary-text($color) {
+  .t-regular,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color;
+  }
+}
+
+@mixin secondary-text($color) {
+  .t-secondary,
+  p {
+    color: $color;
+  }
+}
+
+@include primary-text($on-background);
+@include secondary-text($on-background--secondary);
 
 @mixin text($name, $color) {
   .t-#{$name} {
@@ -28,12 +44,8 @@ body,
   .bg-#{$name} {
     color: $text;
     background-color: $background;
-    .t-regular {
-      color: $text;
-    }
-    .t-secondary {
-      color: $text;
-    }
+    @include primary-text($text);
+    @include secondary-text($text--secondary);
   }
 }
 
