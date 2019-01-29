@@ -6,7 +6,7 @@
   }
 }
 
-@mixin tablet-exclusive {
+@mixin tablet-only {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
   }
@@ -18,7 +18,7 @@
   }
 }
 
-@mixin desktop-exclusive {
+@mixin desktop-only {
   @media (min-width: #{$desktop-width}) and (max-width: #{$large-desktop-width - 1px}) {
     @content;
   }
