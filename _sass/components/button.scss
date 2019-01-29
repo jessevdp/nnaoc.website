@@ -18,13 +18,14 @@ input[type="reset"].btn {
 
   @include secondary-font;
 
-  display: inline-block;
   font-size: 1.2rem;
-  padding: map-get($spacers, 2) map-get($spacers, 3);
+  text-align: center;
 
   color: inherit;
   background-color: transparent;
+  display: inline-block;
   border: 1px solid transparent;
+  padding: map-get($spacers, 2) map-get($spacers, 3);
 
   /* ======================= *
    *  VARIANTS
@@ -79,7 +80,6 @@ input[type="reset"].btn {
   &.btn-block {
     display: block;
     width: 100%;
-    text-align: center;
 
     &.btn-large {
       padding-top: map-get($spacers, 3);
