@@ -1,0 +1,30 @@
+html,
+:root {
+  font-size: 10px;
+}
+
+body,
+section,
+header,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/*
+ * HTML5 adds a new global attribute named [hidden], which is styled as display: none by default.
+ * Borrowing an idea from PureCSS, we improve upon this default by making [hidden] { display: none !important; }
+ * to help prevent its display from getting accidentally overridden. While [hidden] isn’t natively
+ * supported by IE10, the explicit declaration in our CSS gets around that problem.
+ */
+[hidden] {
+  display: none !important;
+}

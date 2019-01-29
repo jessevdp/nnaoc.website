@@ -3,13 +3,13 @@ strict_front_matter: true
 timezone: "Europe/Amsterdam"
 
 title: "NNAOC"
+date_founded: 2012-01-01
 
 # Build settings
 markdown: kramdown
 sass:
   sass_dir: _sass/
   style: compressed
-
 
 # Exclude from processing
 exclude:

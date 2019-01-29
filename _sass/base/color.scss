@@ -1,0 +1,57 @@
+@import "_variables/colors";
+
+html,
+body,
+:root {
+  background: $background;
+  color: $on-background--secondary;
+}
+
+@mixin primary-text($color) {
+  .t-regular,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color;
+  }
+}
+
+@mixin secondary-text($color) {
+  .t-secondary,
+  p {
+    color: $color;
+  }
+}
+
+@include primary-text($on-background);
+@include secondary-text($on-background--secondary);
+
+@mixin text($name, $color) {
+  .t-#{$name} {
+    color: $color;
+  }
+}
+
+@include text("primary", $primary);
+@include text("primary--variant", $primary--variant);
+@include text("accent", $accent);
+@include text("error", $error);
+
+@mixin bg($name, $background, $text, $text--secondary) {
+  .bg-#{$name} {
+    color: $text;
+    background-color: $background;
+    @include primary-text($text);
+    @include secondary-text($text--secondary);
+  }
+}
+
+@include bg("regular", $background, $on-background, $on-background--secondary);
+@include bg("regular--variant", $background--variant, $on-background-variant, $on-background-variant--secondary);
+@include bg("primary", $primary, $on-primary, $on-primary--secondary);
+@include bg("primary--variant", $primary--variant, $on-primary, $on-primary--secondary);
+@include bg("accent", $accent, $on-accent, $on-accent--secondary);
+@include bg("error", $error, $on-error, $on-error--secondary);
