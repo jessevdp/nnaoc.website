@@ -6,15 +6,15 @@ body,
   background: $background;
 }
 
-.text-regular {
+.t-regular {
   color: $on-background;
 }
-.text-regular--secondary {
+.t-secondary {
   color: $on-background--secondary;
 }
 
 @mixin text($name, $color) {
-  .text-#{$name} {
+  .t-#{$name} {
     color: $color;
   }
 }
@@ -28,10 +28,10 @@ body,
   .bg-#{$name} {
     color: $text;
     background-color: $background;
-    .text-regular {
+    .t-regular {
       color: $text;
     }
-    .text-regular--secondary {
+    .t-secondary {
       color: $text;
     }
   }
