@@ -1,4 +1,4 @@
-@import "../variables/screen-sizes";
+@import "_variables/screen-sizes";
 
 @mixin tablet {
   @media (min-width: #{$tablet-width}) {
@@ -24,7 +24,7 @@
   }
 }
 
-@mixin large-deskop {
+@mixin large-desktop {
   @media (min-width: #{$large-desktop-width}) {
     @content;
   }
