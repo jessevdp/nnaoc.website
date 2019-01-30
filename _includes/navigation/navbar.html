@@ -1,0 +1,31 @@
+{% assign style = include.style | default: "dark" %}
+
+<nav class=" navbar-{{ style }} navbar-top">
+    <a href="{{ site.baseurl }}/" class="brand">
+        {% if site.logo_img_path %}
+        <img src="{{ site.logo_img_path }}" alt="brand logo">
+        {% else %}
+        {{ site.title }}
+        {% endif %}
+    </a>
+    <button class="navbar-toggler" data-target="#navbar-content">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbar-content">
+        <ul class="navbar-nav d-md-flex mr-md-auto">
+            {%- for item in site.data.navigation -%}
+
+            {% if item.link == page.url %}
+            {% assign active = " active" %}
+            {% else %}
+            {% assign active = "" %}
+            {% endif %}
+
+            <li class="nav-item">
+                <a href="{{ item.link }}" class="nav-link{{ active }}">{{ item.name }}</a>
+            </li>
+
+            {%- endfor -%}
+        </ul>
+    </div>
+</nav>
