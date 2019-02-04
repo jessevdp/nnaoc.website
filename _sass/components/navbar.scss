@@ -14,15 +14,6 @@ $navbar-height: 5.6rem;
   height: $navbar-height;
   padding: $navbar-vertical-padding 0;
 
-  &.navbar-top {
-    position: absolute;
-    top: 0;
-    z-index: 2;
-
-    & + .margin-navbar-clear {
-      margin-top: calc(#{$navbar-vertical-padding} * 2 + 5.6rem);
-    }
-  }
 
   > .container,
   > .container-fluid {
@@ -74,6 +65,22 @@ $navbar-height: 5.6rem;
           box-shadow: 0 0.2rem 0 0 currentColor;
         }
       }
+    }
+  }
+
+  /*
+  |--------------------------------------------------------------------------
+  | Positioning
+  |--------------------------------------------------------------------------
+  */
+
+  &.navbar-top {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+
+    & + .margin-navbar-clear {
+      margin-top: calc(#{$navbar-vertical-padding} * 2 + 5.6rem);
     }
   }
 }
