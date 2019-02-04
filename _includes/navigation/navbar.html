@@ -1,31 +1,42 @@
+<!-- Default values for settings -->
 {% assign style = include.style | default: "dark" %}
+{% assign width = include.width | default: "wide" %}
 
-<nav class=" navbar-{{ style }} navbar-top">
-    <a href="{{ site.baseurl }}/" class="brand">
-        {% if site.logo_img_path %}
-        <img src="{{ site.logo_img_path }}" alt="brand logo">
-        {% else %}
-        {{ site.title }}
-        {% endif %}
-    </a>
-    <button class="navbar-toggler" data-target="#navbar-content">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="navbar-content">
-        <ul class="navbar-nav d-md-flex mr-md-auto">
-            {%- for item in site.data.navigation -%}
+<!-- Parse width setting -->
+{% if width == "wide" %}
+{% assign container = "container-fluid" %}
+{% else %}
+{% assign container = "container" %}
+{% endif %}
 
-            {% if item.link == page.url %}
-            {% assign active = " active" %}
+<nav class="navbar navbar-{{ style }} navbar-top">
+    <div class="{{ container }}">
+        <a href="{{ site.baseurl }}/" class="navbar-brand">
+            {% if site.logo_img_path %}
+            <img src="{{ site.logo_img_path }}" alt="brand logo">
             {% else %}
-            {% assign active = "" %}
+            {{ site.title }}
             {% endif %}
+        </a>
+        <button class="navbar-toggler" data-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar-content" class="navbar-content">
+            <ul class="navbar-nav">
+                {%- for item in site.data.navigation -%}
 
-            <li class="nav-item">
-                <a href="{{ item.link }}" class="nav-link{{ active }}">{{ item.name }}</a>
-            </li>
+                {% if item.link == page.url %}
+                {% assign active = " active" %}
+                {% else %}
+                {% assign active = "" %}
+                {% endif %}
 
-            {%- endfor -%}
-        </ul>
+                <li class="nav-item">
+                    <a href="{{ item.link }}" class="nav-link{{ active }}">{{ item.name }}</a>
+                </li>
+
+                {%- endfor -%}
+            </ul>
+        </div>
     </div>
 </nav>
