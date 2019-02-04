@@ -80,7 +80,7 @@ $navbar-height: 5.6rem;
     z-index: 2;
 
     & + .margin-navbar-clear {
-      margin-top: calc(#{$navbar-vertical-padding} * 2 + 5.6rem);
+      margin-top: calc(#{$navbar-vertical-padding} * 2 + 5.6rem) !important;
     }
   }
 }
