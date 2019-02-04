@@ -204,8 +204,12 @@ $navbar-height: 5.6rem;
   .nav-link {
     @include secondary-font;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: inherit;
+
+    @include tablet {
+      font-size: 1.2rem;
+    }
 
     &:hover,
     &:focus,
