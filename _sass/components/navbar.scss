@@ -37,6 +37,10 @@ $navbar-height: 5.6rem;
       height: $navbar-height;
       object-fit: scale-down;
     }
+    @include primary-font;
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: inherit;
   }
 
   ul.navbar-nav {
@@ -55,6 +59,20 @@ $navbar-height: 5.6rem;
       }
       &:not(:last-child) {
         margin-right: map-get($spacers, 2);
+      }
+
+      @include secondary-font;
+      .nav-link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: inherit;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          box-shadow: 0 0.2rem 0 0 currentColor;
+        }
       }
     }
   }
