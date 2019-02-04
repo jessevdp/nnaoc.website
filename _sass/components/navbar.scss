@@ -104,12 +104,18 @@ $navbar-height: 5.6rem;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: red;
     padding: map-get($spacers, 5) map-get($spacers, 3);
     box-sizing: border-box;
 
-    transform: scale(0);
+    background: linear-gradient(
+      #{$background},
+      #{$background} calc(#{$navbar-vertical-padding} * 2 + #{$navbar-height}),
+      #{$primary} 1rem,
+      #{$primary}
+    );
+    color: $on-primary;
 
+    transform: scale(0);
     &.show {
       animation: show 300ms ease-in forwards;
     }
@@ -118,19 +124,23 @@ $navbar-height: 5.6rem;
     }
 
     @keyframes show {
-      from {
+      0% {
+        opacity: 0;
         transform: scale(0);
       }
-      to {
+      100% {
+        opacity: 1;
         transform: scale(1);
       }
     }
 
     @keyframes hide {
       from {
+        opacity: 1;
         transform: scale(1);
       }
       to {
+        opacity: 0;
         transform: scale(0);
       }
     }
@@ -142,6 +152,7 @@ $navbar-height: 5.6rem;
       background: transparent;
       padding: 0;
       transform: scale(1) !important;
+      color: inherit;
 
       &.show,
       &.hide {
