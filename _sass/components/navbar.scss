@@ -34,6 +34,46 @@ $navbar-height: 5.6rem;
     @include tablet {
       display: none;
     }
+
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: currentColor;
+
+    &:focus {
+      outline: 0.2rem dashed $accent;
+      outline-offset: 0.2rem;
+    }
+
+    .navbar-toggler-icon {
+      display: block;
+      position: relative;
+      height: 2.4rem;
+      width: 2.4rem;
+
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+        height: 0.2rem;
+        width: 100%;
+        background: currentColor;
+        top: calc(50% - (0.2rem / 2));
+      }
+      &::before {
+        margin-top: -0.5rem;
+      }
+      &::after {
+        margin-top: 0.5rem;
+      }
+    }
   }
 
   .navbar-brand {
