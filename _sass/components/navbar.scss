@@ -1,0 +1,61 @@
+@import "_variables/colors";
+@import "_variables/spacers";
+
+@import "_mixins/fonts";
+
+$navbar-vertical-padding: map-get($spacers, 5);
+$navbar-horizontal-padding: map-get($spacers, 5);
+$navbar-height: 5.6rem;
+
+.navbar {
+  display: block;
+  width: 100%;
+  box-sizing: content-box;
+  height: $navbar-height;
+  padding: $navbar-vertical-padding 0;
+
+  &.navbar-top {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+
+    & + .margin-navbar-clear {
+      margin-top: calc(#{$navbar-vertical-padding} * 2 + 5.6rem);
+    }
+  }
+
+  > .container,
+  > .container-fluid {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    img {
+      height: $navbar-height;
+      object-fit: scale-down;
+    }
+  }
+
+  ul.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-item {
+      &:not(:first-child) {
+        margin-left: map-get($spacers, 2);
+      }
+      &:not(:last-child) {
+        margin-right: map-get($spacers, 2);
+      }
+    }
+  }
+}
