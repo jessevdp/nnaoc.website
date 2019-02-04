@@ -3,8 +3,11 @@
 
 @import "_mixins/fonts";
 
-$navbar-vertical-padding: map-get($spacers, 5);
-$navbar-horizontal-padding: map-get($spacers, 5);
+$navbar-vertical-padding: map-get($spacers, 4);
+$navbar-horizontal-padding: map-get($spacers, 4);
+$navbar-vertical-padding-tablet: map-get($spacers, 5);
+$navbar-horizontal-padding-tablet: map-get($spacers, 5);
+
 $navbar-height: 5.6rem;
 
 .navbar {
@@ -14,13 +17,23 @@ $navbar-height: 5.6rem;
   height: $navbar-height;
   padding: $navbar-vertical-padding 0;
 
+  @include tablet {
+    padding: $navbar-vertical-padding-tablet 0;
+  }
 
   > .container,
   > .container-fluid {
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .navbar-toggler {
+    @include tablet {
+      display: none;
+    }
   }
 
   .navbar-brand {
@@ -34,37 +47,131 @@ $navbar-height: 5.6rem;
     color: inherit;
   }
 
+  .navbar-toggler,
+  .navbar-brand {
+    z-index: 3;
+  }
+
   ul.navbar-nav {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
+  .navbar-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: red;
+    padding: map-get($spacers, 5) map-get($spacers, 3);
+    box-sizing: border-box;
+
+    transform: scale(0);
+
+    &.show {
+      animation: show 300ms ease-in forwards;
+    }
+    &.hide {
+      animation: hide 300ms ease-in forwards;
+    }
+
+    @keyframes show {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes hide {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(0);
+      }
+    }
+
+    @include tablet {
+      position: static;
+      height: auto;
+      width: auto;
+      background: transparent;
+      padding: 0;
+      transform: scale(1) !important;
+
+      &.show,
+      &.hide {
+        animation-duration: 0ms;
+      }
+      &.hide {
+        animation-fill-mode: backwards;
+      }
+    }
+  }
+
   .navbar-nav {
-    display: inline-flex;
+    position: relative;
+    top: 50vh;
+    transform: translateY(-75%);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    .nav-item {
+
+    @include tablet {
+      position: static;
+      transform: none;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .nav-item {
+        margin-bottom: 0;
+        margin-top: 0;
+        &:not(:first-child) {
+          margin-left: map-get($spacers, 2);
+        }
+        &:not(:last-child) {
+          margin-right: map-get($spacers, 2);
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    &:not(:first-child) {
+      margin-top: map-get($spacers, 2);
+    }
+    &:not(:last-child) {
+      margin-bottom: map-get($spacers, 2);
+    }
+
+    @include tablet {
       &:not(:first-child) {
+        margin-top: 0;
         margin-left: map-get($spacers, 2);
       }
       &:not(:last-child) {
+        margin-bottom: 0;
         margin-right: map-get($spacers, 2);
       }
+    }
+  }
 
-      @include secondary-font;
-      .nav-link {
-        text-decoration: none;
-        font-size: 1.2rem;
-        color: inherit;
+  .nav-link {
+    @include secondary-font;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: inherit;
 
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-          box-shadow: 0 0.2rem 0 0 currentColor;
-        }
-      }
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      box-shadow: 0 0.2rem 0 0 currentColor;
     }
   }
 
@@ -75,12 +182,19 @@ $navbar-height: 5.6rem;
   */
 
   &.navbar-top {
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 2;
 
+    @include tablet {
+      position: absolute;
+    }
+
     & + .margin-navbar-clear {
-      margin-top: calc(#{$navbar-vertical-padding} * 2 + 5.6rem) !important;
+      margin-top: calc(#{$navbar-vertical-padding} * 2 + #{$navbar-height}) !important;
+      @include tablet {
+        margin-top: calc(#{$navbar-vertical-padding-tablet} * 2 + #{$navbar-height}) !important;
+      }
     }
   }
 }
