@@ -269,13 +269,16 @@ $navbar-height: 5.6rem;
 
   &.navbar-bg-regular {
     background: $background;
+    border-bottom: 0.1rem solid $on-background--divider;
   }
 
   &.navbar-bg-dark {
     background: $background--variant;
+    border-bottom: 0.1rem solid $on-background-variant--divider;
   }
 
   &.navbar-bg-transparent {
     background: transparent;
+    border-bottom: none;
   }
 }
