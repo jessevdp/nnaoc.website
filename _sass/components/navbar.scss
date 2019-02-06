@@ -280,5 +280,15 @@ $navbar-height: 5.6rem;
   &.navbar-bg-transparent {
     background: transparent;
     border-bottom: none;
+
+    transition: all 100ms;
+
+    &[data-scrolled="true"] {
+      @include mobile-only {
+        background: $background;
+        border-bottom: 0.1rem solid $on-background--divider;
+        color: $on-background;
+      }
+    }
   }
 }
