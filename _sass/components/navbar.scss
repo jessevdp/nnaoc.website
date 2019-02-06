@@ -252,4 +252,30 @@ $navbar-height: 5.6rem;
       }
     }
   }
+
+  /*
+  |--------------------------------------------------------------------------
+  | Theming
+  |--------------------------------------------------------------------------
+  */
+
+  &.navbar-dark {
+    color: $on-background;
+  }
+
+  &.navbar-light {
+    color: $on-background-variant;
+  }
+
+  &.navbar-bg-regular {
+    background: $background;
+  }
+
+  &.navbar-bg-dark {
+    background: $background--variant;
+  }
+
+  &.navbar-bg-transparent {
+    background: transparent;
+  }
 }
