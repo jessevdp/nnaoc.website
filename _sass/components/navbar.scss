@@ -30,6 +30,16 @@ $navbar-height: 5.6rem;
     align-items: center;
   }
 
+  .navbar-brand {
+    order: 1;
+  }
+  .navbar-toggler {
+    order: 2;
+  }
+  .navbar-content {
+    order: 3;
+  }
+
   .navbar-toggler {
     @include tablet {
       display: none;
@@ -96,6 +106,10 @@ $navbar-height: 5.6rem;
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  .navbar-content.show ~ .navbar-toggler {
+    color: $on-background;
   }
 
   .navbar-content {

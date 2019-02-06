@@ -19,9 +19,6 @@
             {{ site.title }}
             {% endif %}
         </a>
-        <button class="navbar-toggler" data-target="#navbar-content">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div id="navbar-content" class="navbar-content">
             <ul class="navbar-nav">
                 {%- for item in site.data.navigation -%}
@@ -39,5 +36,8 @@
                 {%- endfor -%}
             </ul>
         </div>
+        <button class="navbar-toggler" data-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </nav>
