@@ -1,5 +1,6 @@
 <!-- Default values for settings -->
 {% assign style = include.style | default: "dark" %}
+{% assign background = include.background | default: "regular" %}
 {% assign width = include.width | default: "narrow" %}
 
 <!-- Parse width setting -->
@@ -9,7 +10,7 @@
 {% assign container = "container" %}
 {% endif %}
 
-<nav class="navbar navbar-{{ style }} navbar-top">
+<nav class="navbar navbar-{{ style }} navbar-bg-{{ background }} navbar-top">
     <div class="{{ container }}">
         <a href="{{ site.baseurl }}/" class="navbar-brand">
             {% if site.logo_img_path %}
