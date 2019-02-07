@@ -30,20 +30,13 @@ $navbar-height: 5.6rem;
     align-items: center;
   }
 
-  .navbar-brand {
-    order: 1;
-  }
-  .navbar-toggler {
-    order: 2;
-  }
-  .navbar-content {
-    order: 3;
-  }
-
   .navbar-toggler {
     @include tablet {
       display: none;
     }
+
+    z-index: 3;
+    order: 2;
 
     -webkit-appearance: none;
     appearance: none;
@@ -87,6 +80,8 @@ $navbar-height: 5.6rem;
   }
 
   .navbar-brand {
+    order: 1;
+    z-index: 3;
     img {
       height: $navbar-height;
       object-fit: scale-down;
@@ -95,11 +90,6 @@ $navbar-height: 5.6rem;
     font-size: 3.2rem;
     text-decoration: none;
     color: inherit;
-  }
-
-  .navbar-toggler,
-  .navbar-brand {
-    z-index: 3;
   }
 
   ul.navbar-nav {
@@ -120,6 +110,8 @@ $navbar-height: 5.6rem;
     height: 100vh;
     padding: map-get($spacers, 5) map-get($spacers, 3);
     box-sizing: border-box;
+
+    order: 3;
 
     background: linear-gradient(
       #{$background},
