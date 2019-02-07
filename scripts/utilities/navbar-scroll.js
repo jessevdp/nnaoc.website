@@ -9,7 +9,7 @@
     }
 
     function addScrollListenerFor($el) {
-        document.addEventListener('scroll', function (e) {
+        document.addEventListener('scroll', function () {
             if (window.scrollY > boundry) setScrolled($el);
             else removeScrolled($el);
         })
