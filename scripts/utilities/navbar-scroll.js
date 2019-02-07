@@ -1,4 +1,4 @@
-; (function () {
+ (function () {
     var boundry = 20;
     var selector = '.navbar-top.navbar-bg-transparent';
     $elements = document.querySelectorAll(selector);
