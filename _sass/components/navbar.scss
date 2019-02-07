@@ -1,0 +1,300 @@
+@import "_variables/colors";
+@import "_variables/spacers";
+
+@import "_mixins/fonts";
+
+$navbar-vertical-padding: map-get($spacers, 4);
+$navbar-horizontal-padding: map-get($spacers, 4);
+$navbar-vertical-padding-tablet: map-get($spacers, 5);
+$navbar-horizontal-padding-tablet: map-get($spacers, 5);
+
+$navbar-height: 5.6rem;
+
+.navbar {
+  display: block;
+  width: 100%;
+  box-sizing: content-box;
+  height: $navbar-height;
+  padding: $navbar-vertical-padding 0;
+
+  @include tablet {
+    padding: $navbar-vertical-padding-tablet 0;
+  }
+
+  > .container,
+  > .container-fluid {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-toggler {
+    @include tablet {
+      display: none;
+    }
+
+    z-index: 3;
+    order: 2;
+
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: currentColor;
+
+    &:focus {
+      outline: 0.2rem dashed $accent;
+      outline-offset: 0.2rem;
+    }
+
+    .navbar-toggler-icon {
+      display: block;
+      position: relative;
+      height: 2.4rem;
+      width: 2.4rem;
+
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+        height: 0.2rem;
+        width: 100%;
+        background: currentColor;
+        top: calc(50% - (0.2rem / 2));
+      }
+      &::before {
+        margin-top: -0.5rem;
+      }
+      &::after {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .navbar-brand {
+    order: 1;
+    z-index: 3;
+    img {
+      height: $navbar-height;
+      object-fit: scale-down;
+    }
+    @include primary-font;
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-content.show ~ .navbar-toggler {
+    color: $on-background;
+  }
+
+  .navbar-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: map-get($spacers, 5) map-get($spacers, 3);
+    box-sizing: border-box;
+
+    order: 3;
+
+    background: linear-gradient(
+      #{$background},
+      #{$background} calc(#{$navbar-vertical-padding} * 2 + #{$navbar-height}),
+      #{$primary} 1rem,
+      #{$primary}
+    );
+    color: $on-primary;
+
+    transform: scale(0);
+    &.show {
+      animation: show 300ms ease-in forwards;
+    }
+    &.hide {
+      animation: hide 300ms ease-in forwards;
+    }
+
+    @keyframes show {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes hide {
+      from {
+        opacity: 1;
+        transform: scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    @include tablet {
+      position: static;
+      height: auto;
+      width: auto;
+      background: transparent;
+      padding: 0;
+      transform: scale(1) !important;
+      color: inherit;
+
+      &.show,
+      &.hide {
+        animation-duration: 0ms;
+      }
+      &.hide {
+        animation-fill-mode: backwards;
+      }
+    }
+  }
+
+  .navbar-nav {
+    position: relative;
+    top: 50vh;
+    transform: translateY(-75%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      position: static;
+      transform: none;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .nav-item {
+        margin-bottom: 0;
+        margin-top: 0;
+        &:not(:first-child) {
+          margin-left: map-get($spacers, 2);
+        }
+        &:not(:last-child) {
+          margin-right: map-get($spacers, 2);
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    &:not(:first-child) {
+      margin-top: map-get($spacers, 2);
+    }
+    &:not(:last-child) {
+      margin-bottom: map-get($spacers, 2);
+    }
+
+    @include tablet {
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: map-get($spacers, 2);
+      }
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: map-get($spacers, 2);
+      }
+    }
+  }
+
+  .nav-link {
+    @include secondary-font;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: inherit;
+
+    @include tablet {
+      font-size: 1.2rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      box-shadow: 0 0.2rem 0 0 currentColor;
+    }
+  }
+
+  /*
+  |--------------------------------------------------------------------------
+  | Positioning
+  |--------------------------------------------------------------------------
+  */
+
+  &.navbar-top {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    @include tablet {
+      position: absolute;
+    }
+
+    & + .margin-navbar-clear {
+      margin-top: calc(#{$navbar-vertical-padding} * 2 + #{$navbar-height}) !important;
+      @include tablet {
+        margin-top: calc(#{$navbar-vertical-padding-tablet} * 2 + #{$navbar-height}) !important;
+      }
+    }
+  }
+
+  /*
+  |--------------------------------------------------------------------------
+  | Theming
+  |--------------------------------------------------------------------------
+  */
+
+  &.navbar-dark {
+    color: $on-background;
+  }
+
+  &.navbar-light {
+    color: $on-background-variant;
+  }
+
+  &.navbar-bg-regular {
+    background: $background;
+    border-bottom: 0.1rem solid $on-background--divider;
+  }
+
+  &.navbar-bg-dark {
+    background: $background--variant;
+    border-bottom: 0.1rem solid $on-background-variant--divider;
+  }
+
+  &.navbar-bg-transparent {
+    background: transparent;
+    border-bottom: none;
+
+    transition: all 100ms;
+
+    &[data-scrolled="true"] {
+      @include mobile-only {
+        background: $background;
+        border-bottom: 0.1rem solid $on-background--divider;
+        color: $on-background;
+      }
+    }
+  }
+}
