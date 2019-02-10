@@ -7,9 +7,6 @@ date_founded: 2012-01-01
 
 logo_img_path: /assets/logo/logo.svg
 
-collections:
-  - acknowledgements
-
 # Build settings
 markdown: kramdown
 sass:
