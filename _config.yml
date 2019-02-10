@@ -8,7 +8,6 @@ date_founded: 2012-01-01
 logo_img_path: /assets/logo/logo.svg
 
 collections:
-  - references
   - acknowledgements
 
 # Build settings

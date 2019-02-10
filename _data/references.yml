@@ -1,0 +1,23 @@
+- name: Thermo Noord
+  image-path: assets/references/thermo-noord.png
+
+- name: Plieger
+  image-path: assets/references/plieger.png
+
+- name: Provincie Groningen
+  image-path: assets/references/provincie-groningen.png
+
+- name: Fundament All Media
+  image-path: assets/references/fundament-all-media.png
+
+- name: Gemeente Veendam
+  image-path: assets/references/gemeente-veendam.png
+
+- name: De Machinist
+  image-path: assets/references/de-machinist.png
+
+- name: Hogeschool VHL
+  image-path: assets/references/vhl.png
+
+- name: Radyus
+  image-path: assets/references/radyus.png
