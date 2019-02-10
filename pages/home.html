@@ -3,10 +3,19 @@ layout: default
 title: Home
 permalink: /
 
+header-img-path: assets/home/header.jpg
+
 navbar-style: light
 navbar-bg: transparent
 ---
 
-<div class="container margin-navbar-clear">
-    <h1>Home</h1>
-</div>
+<header class="home bg-primary--variant">
+    <div class="background-image overlay-dark" style="background-image:url({{ page.header-img-path }});"></div>
+    <main>
+        <div class="container">
+            <h4>Welkom bij NNAOC.</h4>
+            <h1>NNAOC is een marktgerichte onderwijs vernieuwende organisatie die maatwerk oplossingen bied op basis van
+                landelijk erkende opleidingen.</h1>
+        </div>
+    </main>
+</header>
