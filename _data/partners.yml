@@ -9,3 +9,6 @@
 
 - name: Nordwin
   image_path: /assets/partner/nordwin.png
+
+- name: Wedeka
+  image_path: /assets/partner/wedeka.png
