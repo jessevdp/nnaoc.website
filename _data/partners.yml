@@ -3,3 +3,6 @@
 
 - name: DynaMiek
   image_path: /assets/partner/dynamiek.png
+
+- name: Arcadis
+  image_path: /assets/partner/arcadis.png
