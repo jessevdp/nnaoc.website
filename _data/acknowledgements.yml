@@ -1,5 +1,5 @@
 - name: Aequor Erkend Leerbedrijf
-  image-path: assets/acknowledgements/aequor.png
+  image_path: /assets/acknowledgements/aequor.png
 
 - name: Fundeon Erkend Leerbedrijf
-  image-path: assets/acknowledgements/fundeon.png
+  image_path: /assets/acknowledgements/fundeon.png
