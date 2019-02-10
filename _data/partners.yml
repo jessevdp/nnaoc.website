@@ -6,3 +6,6 @@
 
 - name: Arcadis
   image_path: /assets/partner/arcadis.png
+
+- name: Nordwin
+  image_path: /assets/partner/nordwin.png
