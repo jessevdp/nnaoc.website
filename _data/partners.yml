@@ -12,3 +12,6 @@
 
 - name: Wedeka
   image_path: /assets/partner/wedeka.png
+
+- name: De Kompanjie
+  image_path: /assets/partner/de-kompanjie.png
