@@ -1,2 +1,5 @@
 - name: WesterKwartier
   image_path: /assets/partner/westerkwartier.png
+
+- name: DynaMiek
+  image_path: /assets/partner/dynamiek.png
