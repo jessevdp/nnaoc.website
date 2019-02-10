@@ -9,6 +9,7 @@ logo_img_path: /assets/logo/logo.svg
 
 collections:
   - references
+  - acknowledgements
 
 # Build settings
 markdown: kramdown
