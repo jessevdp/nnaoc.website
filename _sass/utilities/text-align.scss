@@ -1,0 +1,24 @@
+@mixin text-align-classes($infix) {
+  .text#{$infix}-left {
+    text-align: left;
+  }
+
+  .text#{$infix}-right {
+    text-align: right;
+  }
+
+  .text#{$infix}-center {
+    text-align: center;
+  }
+}
+
+@include text-align-classes("");
+@include tablet {
+  @include text-align-classes("-tablet");
+}
+@include desktop {
+  @include text-align-classes("-desktop");
+}
+@include large-desktop {
+  @include text-align-classes("-large-desktop");
+}
