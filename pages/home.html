@@ -29,6 +29,30 @@ navbar-bg: transparent
     </div>
 </section>
 
+<section class="logo-grid bg-primary">
+    <div class="container text-center py-6 py-tablet-7">
+        <h1>Erkenningen</h1>
+        <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+            {% for acknowledgement in site.data.acknowledgements %}
+            <img src="{{ acknowledgement.image_path }}" alt="{{ acknowledgement.name }}"
+                class="my-4 mx-5  overlay-accent large">
+            {% endfor %}
+        </div>
+        <h2 class="mt-6">Refenreties van NNAOC</h2>
+        <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+            {% for reference in site.data.references %}
+            <img src="{{ reference.image_path }}" alt="{{ reference.name }}" class="my-4 mx-5 overlay-variant small">
+            {% endfor %}
+        </div>
+        <h2 class="mt-6">Partners van NNAOC</h2>
+        <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+            {% for partner in site.data.partners %}
+            <img src="{{ partner.image_path }}" alt="{{ partner.name }}" class="my-4 mx-5 overlay-variant small">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <section class="cta bg-primary py-6 py-tablet-7">
     <div class="container text-center">
         <h2>NNAOC is een gewaardeerde en succesvolle partner met ruime ervaring in het Onderwijs, de Sociale Zekerheid
