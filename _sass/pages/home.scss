@@ -1,0 +1,64 @@
+@import "_variables/spacers";
+@import "_variables/colors";
+@import "_mixins/media-queries";
+
+header.home {
+  height: 100vh;
+  width: 100vw;
+  main {
+    position: absolute;
+    bottom: map-get($spacers, 5);
+    width: 100%;
+    @include mobile-only {
+      h1 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+
+section.cta {
+  @include mobile-only {
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
+  @include desktop {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @include large-desktop {
+    .container {
+      max-width: 960px;
+    }
+  }
+}
+
+section.logo-grid {
+  img.large {
+    max-width: 24rem;
+    max-height: 48rem;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+  img.small {
+    max-width: 16rem;
+    max-height: 32rem;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+  img.overlay-accent {
+    filter: drop-shadow(3000px 0 0 $accent);
+    transform: translateX(-3000px);
+  }
+
+  img.overlay-variant {
+    filter: drop-shadow(3000px 0 0 $primary--variant);
+    transform: translateX(-3000px);
+  }
+}

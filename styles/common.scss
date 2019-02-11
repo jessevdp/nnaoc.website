@@ -7,9 +7,11 @@
 @import "base/color";
 @import "base/typography";
 
-@import "components/button";
-
 @import "utilities/spacing";
+@import "utilities/background-image";
 @import "utilities/text-align";
 
+@import "components/button";
 @import "components/navbar";
+
+@import "pages/home";
