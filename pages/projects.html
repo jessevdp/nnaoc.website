@@ -30,7 +30,7 @@ navbar-bg: regular
                     <h2 class="mb-0">
                         {{ project.title }}
                         {% if project.is_featured %}
-                        <span>*</span>
+                        <span class="t-accent">*</span>
                         {% endif%}
                     </h2>
                     <h5 class="mt-1 mb-3 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h5>
@@ -54,7 +54,7 @@ navbar-bg: regular
                     <h3>
                         {{ project.title }}
                         {% if project.is_featured %}
-                        <span>*</span>
+                        <span class="t-accent">*</span>
                         {% endif%}
                     </h3>
                     <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
