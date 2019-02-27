@@ -21,8 +21,27 @@
                 <div class="col-md-7">
                     {{ content }}
                 </div>
-                <div class="col-md-5 col-lg-4 offset-lg-1 mt-5 mt-tablet-0">
-                    <div class="py-7 bg-regular--variant"></div>
+                <div class="col-md-5 col-lg-3 offset-lg-1 mt-5 mt-tablet-0">
+                    {% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
+                    {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
+                    {% assign all = featured | concat: other %}
+                    {% assign projects = all | where_exp: "item", "item.path != page.path" %}
+
+                    {% for project in projects limit: 3 %}
+                    <div class="mb-4">
+                        <h3 class="text-large">
+                            {{ project.title }}
+                            {% if project.is_featured %}
+                            <span class="t-accent">*</span>
+                            {% endif%}
+                        </h3>
+                        <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
+                        <p class="text-small">
+                            {{ project.content | strip_html | truncatewords: 20, " ..." }}
+                        </p>
+                        <a href="{{ project.url }}" class="btn btn-light btn-small mt-2">Lees meer</a>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

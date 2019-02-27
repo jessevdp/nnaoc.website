@@ -18,7 +18,6 @@ navbar-bg: regular
 
 {% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
 {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
-
 {% assign projects = featured | concat: other %}
 
 <section class="py-5 py-tablet-6 bg-regular--variant">
