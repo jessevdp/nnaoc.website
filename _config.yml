@@ -12,6 +12,12 @@ collections:
     output: true
     permalink: "/dossiers/:year/:month/:day/:title"
 
+defaults:
+  - scope:
+      type: projects
+    values:
+      layout: project
+
 # Build settings
 markdown: kramdown
 sass:
