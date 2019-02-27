@@ -3,6 +3,8 @@ layout: default
 title: Projects
 permalink: /dossiers/
 
+featured-amount: 2
+
 navbar-style: dark
 navbar-bg: regular
 ---
@@ -22,7 +24,7 @@ navbar-bg: regular
 <section class="py-5 py-tablet-6 bg-regular--variant">
     <div class="container">
         <div class="row">
-            {% for project in projects limit: 4 %}
+            {% for project in projects limit: page.featured-amount %}
             <div class="col-lg-6">
                 <div class="p-5">
                     <h2>{{ project.title }}</h2>
@@ -40,7 +42,7 @@ navbar-bg: regular
 <main class="py-4 py-tablet-5">
     <div class="container">
         <div class="row">
-            {% for project in projects offset: 4 %}
+            {% for project in projects offset: page.featured-amount %}
             <div class="col-md-6 col-lg-4">
                 <div class="p-4">
                     <h3>{{ project.title }}</h3>
