@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include navigation/navbar.html style=page.navbar-style background=page.navbar-bg width=page.navbar-width %}
+
+    <div class="container margin-navbar-clear">
+        <p class="t-primary">{{ page.title }}</p>
+        {{ content }}
+    </div>
+
+    {% include footer.html %}
+</body>
+
+{% include scripts.html %}
+
+</html>
