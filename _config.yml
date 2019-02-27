@@ -7,6 +7,11 @@ date_founded: 2012-01-01
 
 logo_image_path: /assets/logo/logo.svg
 
+collections:
+  projects:
+    output: true
+    permalink: "/dossiers/:year/:month/:day/:title"
+
 # Build settings
 markdown: kramdown
 sass:
