@@ -14,17 +14,40 @@ navbar-bg: regular
     </div>
 </header>
 
+{% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
+{% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
+
+{% assign projects = featured | concat: other %}
+
+<section class="py-5 py-tablet-6 bg-regular--variant">
+    <div class="container">
+        <div class="row">
+            {% for project in projects limit: 4 %}
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h2>{{ project.title }}</h2>
+                    <p>
+                        {{ project.content | strip_html | truncatewords: 50, " ..." }}
+                    </p>
+                    <a href="{{ project.url }}" class="btn btn-accent mt-3">Lees meer</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <main class="py-4 py-tablet-5">
     <div class="container">
         <div class="row">
-            {% for project in site.projects %}
+            {% for project in projects offset: 4 %}
             <div class="col-md-6 col-lg-4">
                 <div class="p-4">
                     <h3>{{ project.title }}</h3>
                     <p class="text-small">
-                        {{ project.content | strip_html | truncatewords: 40, "" }}
+                        {{ project.content | strip_html | truncatewords: 40, " ..." }}
                     </p>
-                    <a href="{{ project.url }}" class="btn btn-light mt-3">Read more</a>
+                    <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
                 </div>
             </div>
             {% endfor %}
