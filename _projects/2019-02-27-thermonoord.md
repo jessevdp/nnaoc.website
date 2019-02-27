@@ -1,4 +1,5 @@
 ---
+is_featured: true
 ---
 
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, quia, doloremque praesentium amet vero cupiditate culpa, illo dolore sit quisquam sed aut quos? Mollitia, consequuntur nesciunt suscipit error reprehenderit incidunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia labore ducimus quis nam maiores sint quia! Molestias atque, temporibus magnam accusantium odio nam quas ut dolor, nostrum suscipit doloribus exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam modi, iure ratione blanditiis vero, enim asperiores a molestiae temporibus dolores quam maxime eligendi nisi ullam, voluptatem distinctio? Maxime, suscipit maiores?

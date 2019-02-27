@@ -1,4 +1,5 @@
 ---
+is_featured: false
 ---
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus minima enim asperiores libero molestias quam quisquam repellat neque adipisci error praesentium vitae dolores, sit ratione assumenda earum deserunt officia! Amet! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem soluta distinctio amet dicta vel. Sequi magni odit voluptatibus esse sint est? Atque in velit quis vero qui, a itaque saepe? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut aliquid obcaecati voluptatibus, dolore, assumenda eveniet doloremque earum at in repellendus debitis accusantium quo totam deleniti ducimus praesentium architecto esse ex!
