@@ -6,12 +6,36 @@
 </head>
 
 <body>
-    {% include navigation/navbar.html style=page.navbar-style background=page.navbar-bg width=page.navbar-width %}
+    {% include navigation/navbar.html %}
 
-    <div class="container margin-navbar-clear">
-        <p class="t-primary">{{ page.title }}</p>
-        {{ content }}
-    </div>
+    <header class="margin-navbar-clear py-6 py-tablet-7 bg-primary text-center">
+        <div class="container">
+            <h1 class="mb-0">{{ page.title }}</h1>
+            <h5 class="mt-0">{{ page.date | date: "%d/%m/%Y" }}</h5>
+        </div>
+    </header>
+
+    <main class="py-4 py-tablet-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    {{ content }}
+                </div>
+                <div class="col-md-5 col-lg-4 offset-lg-1 mt-5 mt-tablet-0">
+                    <div class="py-7 bg-regular--variant"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta bg-primary py-6 py-tablet-7">
+        <div class="container text-center">
+            <h2>NNAOC is een gewaardeerde en succesvolle partner met ruime ervaring in het Onderwijs, de Sociale
+                Zekerheid
+                en Maatschappelijke Dienstverlening.</h2>
+            <a href="/contact" class="btn btn-accent btn-large mt-4">Neem contact met ons op</a>
+        </div>
+    </section>
 
     {% include footer.html %}
 </body>
