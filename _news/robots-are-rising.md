@@ -11,7 +11,7 @@ Insider Picks writes about products and services to help you navigate when shopp
 
 I love robot vacuums. It's the easiest way to clean my messy house without requiring me to do much more than press a button. There are nice machines at a variety of price points that can go from hardwood to shaggy carpets without issues, empty their own dustbin, mop your floor, and more, but one that stands out for me is the top-of-the-line D7 Connected Robot Vacuum from California-based Neato Robotics. I've been using it in my own home for a while, and in my experience, it is worth the $793 price tag — here's why.
 
-Design
+## Design
 
 Unlike conventional robo vacs, Neato's are all D-shaped, including the D7. This helps with cleaning corners better than others in my opinion, and just looks really unique and interesting.
 
@@ -19,7 +19,7 @@ The D7 measures 12.5 inches by 13 inches by 4 inches. The four-inch height is hi
 
 Read more: The best robot vacuums you can buy
 
-Specs
+## Specs
 
 * 13.21 inch x 12.56 inch x 3.92 inch
 * 7.5 lbs
@@ -28,11 +28,11 @@ Specs
 * Quick boost charging
 * Battery recharge and resume (up to 2 times)
 
-Set-up process
+## Set-up process
 
 The instructions are easy to understand so set up only took about half an hour, most of which was spent trying to find the wireless connection after setting up the dock and downloading the Neato app. I just had to go through the connection process a few times before it actually connected. I finished by upgrading the firmware and then charged the vac for an hour and half before taking it for a spin.
 
-What makes this robotic vacuum stand out
+### What makes this robotic vacuum stand out
 
 It cleaned over my carpet and hardwood floors without any major problems. Amazon
 
@@ -52,7 +52,7 @@ The "Connected" part of D7's name comes from its smart capabilities. You can con
 
 Read more: This new robot vacuum is one of the best investments you can make to save time this year
 
-Cons to consider
+### Cons to consider
 
 The floors of my house were strewn with toys so the vacuum had some trouble getting to certain areas. Amazon
 
@@ -62,7 +62,7 @@ Overall, the app is useful. It tells you when your Neato is stuck and when to em
 
 Like I mentioned earlier, it's also really expensive.
 
-The bottom line
+# The bottom line
 
 Overall, I'm happy with how the Neato Robotics D7 Connected Robot Vacuum performed. When it comes down to it, the ability to clean a floor is the most important (and basic) feature a vacuum should have and the D7 delivers the goods without making a loud production of it. I could take or leave the mapping and Alexa functionality, but they are kind of fun tools to have at my disposal. If you are looking for a robotic vacuum with all of the bells and whistles and you have the ability to spend top dollar, you should definitely give the D7 Connected a try.
 
