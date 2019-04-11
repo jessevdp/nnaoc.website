@@ -86,9 +86,35 @@ navbar-bg: transparent
 <section class="bg-regular border-bottom-2">
     <div class="container py-7 text-center">
         <h2>Al het Laatste</h2>
-        <h5 class="t-secondary mb-5">Nieuws en verhalen</h5>
-        <div class="bg-regular--variant py-7"></div>
-        <a href="/nieuws" class="btn btn-primary mt-5">Bekijk al het nieuws</a>
+        <h5 class="t-secondary mb-6">Nieuws en verhalen</h5>
+
+        {% assign featured = site.news | where: 'is_featured', true | sort: date | reverse %}
+        {% assign other = site.news | where: 'is_featured', false | sort: date | reverse %}
+        {% assign news = featured | concat: other %}
+        {% for item in news limit: 3 %}
+
+        <div class="row mb-5 text-left">
+            <div class="col-md-6 col-lg-4">
+                <img src="{{ item.header_image_path }}" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-lg-8 pt-2">
+                <h3>
+                    {{ item.title }}
+                    {% if item.is_featured %}
+                        <span class="t-accent">*</span>
+                    {% endif%}
+                </h3>
+                <h5 class="mt-0">{{ item.author }} &mdash; {{ item.date | date: '%d/%m/%Y' }}</h5>
+                <p class="text-small mt-3">
+                    {{ item.content | markdownify | strip_html | truncatewords: 30, " ..." }}
+                </p>
+                <a href="{{ item.url }}" class="btn btn-light btn-small mt-3">Lees meer</a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <a href="/nieuws" class="btn btn-primary mt-3">Bekijk al het nieuws</a>
     </div>
 </section>
 
