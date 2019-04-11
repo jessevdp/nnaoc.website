@@ -1,5 +1,6 @@
 @import "_variables/spacers";
 @import "_mixins/fonts";
+@import "_mixins/media-queries";
 
 body,
 p,
@@ -64,4 +65,29 @@ h4 {
 h5,
 h6 {
   font-size: 1.2rem;
+}
+
+@mixin font-size-classes($infix) {
+  .text#{$infix}-small {
+    font-size: 1.4rem;
+  }
+
+  .text#{$infix}-regular {
+    font-size: 1.6rem;
+  }
+
+  .text#{$infix}-large {
+    font-size: 2rem;
+  }
+}
+
+@include font-size-classes("");
+@include tablet {
+  @include font-size-classes("-tablet");
+}
+@include desktop {
+  @include font-size-classes("-desktop");
+}
+@include large-desktop {
+  @include font-size-classes("-large-desktop");
 }
