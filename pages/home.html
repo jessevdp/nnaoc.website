@@ -38,7 +38,7 @@ navbar-bg: transparent
             {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
             {% assign projects = featured | concat: other %}
             {% for project in projects limit: 3 %}
-            <div class="col-md-10 col-lg-4">
+            <div class="col-lg-4">
                 <div class="p-4">
                     <h3>
                         {{ project.title }}
