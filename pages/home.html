@@ -87,6 +87,8 @@ navbar-bg: transparent
     </div>
 </section>
 
+{% unless site.news == empty %}
+
 <section class="bg-regular border-bottom-2">
     <div class="container py-7 text-center">
         <h2>Al het Laatste</h2>
@@ -121,6 +123,8 @@ navbar-bg: transparent
         <a href="/nieuws" class="btn btn-primary mt-3">Bekijk al het nieuws</a>
     </div>
 </section>
+
+{% endunless %}
 
 <section class="bg-regular">
     <div class="container py-7 text-center">
