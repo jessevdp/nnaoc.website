@@ -48,7 +48,7 @@ navbar-bg: transparent
                     </h3>
                     <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
                     <p class="text-small">
-                        {{ project.content | strip_html | truncatewords: 38, " ..." }}
+                        {{ project.content | markdownify | strip_html | truncatewords: 38, " ..." }}
                     </p>
                     <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
                 </div>
