@@ -44,6 +44,8 @@ navbar-bg: regular
     </div>
 </section>
 
+{% unless projects | size <= page.featured_number %}
+
 <main class="py-4 py-tablet-5">
     <div class="container">
         <div class="row">
@@ -67,3 +69,5 @@ navbar-bg: regular
         </div>
     </div>
 </main>
+
+{% endunless %}

@@ -29,6 +29,8 @@ navbar-bg: transparent
     </div>
 </section>
 
+{% unless site.projects == empty %}
+
 <section class="bg-regular">
     <div class="container py-7 text-center">
         <h2>Dossiers</h2>
@@ -58,6 +60,8 @@ navbar-bg: transparent
         <a href="/dossiers" class="btn btn-primary mt-5">Bekijk alle dossiers</a>
     </div>
 </section>
+
+{% endunless %}
 
 <section class="logo-grid bg-primary">
     <div class="container text-center py-6 py-tablet-7">
