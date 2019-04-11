@@ -1,5 +1,7 @@
 ---
-header_image_path: /assets/partners/dynamiek.png
+title: "Zonnendorpen"
+date: 2015-09-09
+header_image_path: "/assets/news/newspaper.jpg"
 author: "Kees Moolenaar"
 author_link: ""
 is_featured: false
