@@ -33,11 +33,11 @@
                             {{ project.title }}
                             {% if project.is_featured %}
                             <span class="t-accent">*</span>
-                            {% endif%}
+                            {% endif %}
                         </h3>
                         <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
                         <p class="text-small">
-                            {{ project.content | strip_html | truncatewords: 20, " ..." }}
+                            {{ project.content | markdownify | strip_html | truncatewords: 20, " ..." }}
                         </p>
                         <a href="{{ project.url }}" class="btn btn-light btn-small mt-2">Lees meer</a>
                     </div>

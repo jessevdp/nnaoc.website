@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Projects
+title: Dossiers
 permalink: /dossiers/
 
 featured_number: 2
@@ -34,7 +34,7 @@ navbar-bg: regular
                     </h2>
                     <h5 class="mt-1 mb-3 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h5>
                     <p>
-                        {{ project.content | strip_html | truncatewords: 50, " ..." }}
+                        {{ project.content | markdownify | strip_html | truncatewords: 50, " ..." }}
                     </p>
                     <a href="{{ project.url }}" class="btn btn-accent mt-3">Lees meer</a>
                 </div>
@@ -43,6 +43,8 @@ navbar-bg: regular
         </div>
     </div>
 </section>
+
+{% unless projects | size <= page.featured_number %}
 
 <main class="py-4 py-tablet-5">
     <div class="container">
@@ -58,7 +60,7 @@ navbar-bg: regular
                     </h3>
                     <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
                     <p class="text-small">
-                        {{ project.content | strip_html | truncatewords: 40, " ..." }}
+                        {{ project.content | markdownify | strip_html | truncatewords: 40, " ..." }}
                     </p>
                     <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
                 </div>
@@ -67,3 +69,5 @@ navbar-bg: regular
         </div>
     </div>
 </main>
+
+{% endunless %}

@@ -29,6 +29,8 @@ navbar-bg: transparent
     </div>
 </section>
 
+{% unless site.projects == empty %}
+
 <section class="bg-regular">
     <div class="container py-7 text-center">
         <h2>Dossiers</h2>
@@ -48,7 +50,7 @@ navbar-bg: transparent
                     </h3>
                     <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
                     <p class="text-small">
-                        {{ project.content | strip_html | truncatewords: 38, " ..." }}
+                        {{ project.content | markdownify | strip_html | truncatewords: 38, " ..." }}
                     </p>
                     <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
                 </div>
@@ -58,6 +60,8 @@ navbar-bg: transparent
         <a href="/dossiers" class="btn btn-primary mt-5">Bekijk alle dossiers</a>
     </div>
 </section>
+
+{% endunless %}
 
 <section class="logo-grid bg-primary">
     <div class="container text-center py-6 py-tablet-7">
