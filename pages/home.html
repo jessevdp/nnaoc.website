@@ -33,7 +33,28 @@ navbar-bg: transparent
     <div class="container py-7 text-center">
         <h2>Dossiers</h2>
         <h5 class="t-secondary mb-5">Lorem ipsum dollar sit amet</h5>
-        <div class="bg-regular--variant py-7"></div>
+        <div class="row text-left">
+            {% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
+            {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
+            {% assign projects = featured | concat: other %}
+            {% for project in projects limit: 3 %}
+            <div class="col-md-10 col-lg-4">
+                <div class="p-4">
+                    <h3>
+                        {{ project.title }}
+                        {% if project.is_featured %}
+                        <span class="t-accent">*</span>
+                        {% endif%}
+                    </h3>
+                    <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
+                    <p class="text-small">
+                        {{ project.content | strip_html | truncatewords: 38, " ..." }}
+                    </p>
+                    <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
         <a href="/dossiers" class="btn btn-primary mt-5">Bekijk alle dossiers</a>
     </div>
 </section>
