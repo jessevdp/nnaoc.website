@@ -31,7 +31,25 @@ navbar-bg: regular
     </div>
 </section>
 
-<section class="cta bg-accent py-7"></section>
+<section class="logo-grid bg-primary">
+        <div class="container py-6 py-tablet-7 text-center text-desktop-left">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h2>Erkenningen</h2>
+                    <p class="text-large">NNAOC is een door kenniscentrum Aequor en Funded erkend leerbedrijf met aandacht voor duurzaamheid en milieu. Van NNAOC kunt u verwachten dat we open, eerlijk en oplossingsgericht werken, ondersteund door heldere processen en een snelle reactietermijn. Wij zijn u graag van dienst!</p>
+                </div>
+                <div class="col-lg-7 mt-4 mt-lg-0">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap">
+                        {% for acknowledgement in site.data.acknowledgements %}
+                        <img src="{{ acknowledgement.image_path }}" alt="{{ acknowledgement.name }}"
+                            class="my-4 mx-5 overlay-accent small">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 
 <section class="cta bg-regular py-6 py-tablet-7 border-bottom-2">
     <div class="container text-center">
