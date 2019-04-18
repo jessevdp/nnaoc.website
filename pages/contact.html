@@ -4,6 +4,11 @@ title: Contact
 permalink: /contact/
 
 contact_email: nnaoc@mailinator.com
+subjects:
+    - Advies
+    - Inschrijven voor een opleiding
+    - Maatwerkoplossing
+    - Anders
 ---
 
 <header class="bg-regular margin-navbar-clear">
@@ -26,9 +31,9 @@ contact_email: nnaoc@mailinator.com
                         <label>Onderwerp</label>
                         <select name="_subject" class="custom-select" required>
                             <option disabled selected>Kies een onderwerp*</option>
-                            <option>One</option>
-                            <option>Two</option>
-                            <option>Three</option>
+                            {% for subject in page.subjects %}
+                            <option>{{ subject }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
