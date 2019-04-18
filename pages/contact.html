@@ -7,6 +7,97 @@ permalink: /contact/
 <header class="bg-regular margin-navbar-clear">
     <div class="container py-5 text-tablet-center">
         <h1>Begin een gesprek</h1>
-        <p class="text-large">Stuur gerust een bericht, we bijten niet</p>
+        <p class="text-large">Stuur gerust een bericht, we bijten niet.</p>
     </div>
 </header>
+
+<section class="cta bg-regular">
+    <div class="container pb-5">
+        <form method="POST">
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Onderwerp</label>
+                        <select name="_subject" class="custom-select" required>
+                            <option disabled selected>Kies een onderwerp*</option>
+                            <option>One</option>
+                            <option>Two</option>
+                            <option>Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Naam</label>
+                        <input type="text" name="naam" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label>Bedrijf of organisatie (optioneel)</label>
+                            <input type="text" name="bedrijf/organisatie" class="form-control">
+                            <small class="form-text t-muted">Dit hoef je alleen in te vullen als het van toepassing is.</small>
+                        </div>
+                    </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Email adres</label>
+                        <input type="email" name="email" class="form-control" required>
+                        <small class="form-text t-muted">We delen je email adres nooit.</small>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Telefoon nummer (optioneel)</label>
+                        <input type="text" name="telefoon nummer" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Straat (optioneel)</label>
+                        <input type="text" name="straat" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Huisnummer (optioneel)</label>
+                        <input type="text" name="huisnummer" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Plaatsnaam (optioneel)</label>
+                        <input type="text" name="plaatsnaam" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Postcode (optioneel)</label>
+                        <input type="text" name="postcode" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Bericht</label>
+                        <textarea name="bericht" rows="5" class="form-control" required></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="d-flex flex-row-reverse">
+                    <button type="submit" class="btn btn-primary btn-large">Verstuur</button>
+            </div>
+        </form>
+    </div>
+</section>
