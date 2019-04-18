@@ -26,8 +26,16 @@ body,
   }
 }
 
+@mixin muted-text($color) {
+  .t-muted {
+    color: $color;
+    opacity: .7;
+  }
+}
+
 @include primary-text($on-background);
 @include secondary-text($on-background--secondary);
+@include muted-text($on-background--secondary);
 
 @mixin border($color) {
   @each $variant in ("", "-top", "-bottom", "-left", "-right") {
@@ -58,6 +66,7 @@ body,
     background-color: $background;
     @include primary-text($text);
     @include secondary-text($text--secondary);
+    @include muted-text($text--secondary);
     @include border($divider);
   }
 }
