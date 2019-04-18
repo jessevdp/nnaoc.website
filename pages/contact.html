@@ -2,6 +2,8 @@
 layout: no-cta
 title: Contact
 permalink: /contact/
+
+contact_email: nnaoc@mailinator.com
 ---
 
 <header class="bg-regular margin-navbar-clear">
@@ -14,6 +16,7 @@ permalink: /contact/
 <section class="cta bg-regular">
     <div class="container pb-5">
         <form method="POST">
+            <input type="hidden" name="_to" value="{{ page.contact_email }}">
             <input type="text" name="_gotcha" style="display: none;">
 
             <div class="row">
