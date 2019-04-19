@@ -33,8 +33,8 @@ navbar-bg: transparent
 
 <section class="bg-regular">
     <div class="container py-7 text-center">
-        <h2 class="editable">Dossiers</h2>
-        <h5 class="t-secondary mb-5 editable">Lorem ipsum dollar sit amet</h5>
+        <h2 class="editable" href="/over-ons">Dossiers</h2>
+        <h5 class="t-secondary mb-5 editable" href="/over-ons">Lorem ipsum dollar sit amet</h5>
         <div class="row text-left">
             {% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
             {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
@@ -65,23 +65,22 @@ navbar-bg: transparent
 
 <section class="logo-grid bg-primary">
     <div class="container text-center py-6 py-tablet-7">
-        <h1 class="editable">Erkenningen</h1>
+        <h1 class="editable" href="/dossiers">Erkenningen</h1>
         <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
             {% for acknowledgement in site.data.acknowledgements %}
-            <img src="{{ acknowledgement.image_path }}" alt="{{ acknowledgement.name }}"
-                class="my-4 mx-5  overlay-accent large">
+            <img src="{{ acknowledgement.image_path }}" alt="{{ acknowledgement.name }}" class="my-4 mx-5  overlay-accent large" />
             {% endfor %}
         </div>
-        <h2 class="mt-6 editable">Refenreties van NNAOC</h2>
+        <h2 class="mt-6 editable" href="/dossiers">Refenreties van NNAOC</h2>
         <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
             {% for reference in site.data.references %}
-            <img src="{{ reference.image_path }}" alt="{{ reference.name }}" class="my-4 mx-5 overlay-variant small">
+            <img src="{{ reference.image_path }}" alt="{{ reference.name }}" class="my-4 mx-5 overlay-variant small" />
             {% endfor %}
         </div>
-        <h2 class="mt-6 editable">Partners van NNAOC</h2>
+        <h2 class="mt-6 editable" href="/dossiers">Partners van NNAOC</h2>
         <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
             {% for partner in site.data.partners %}
-            <img src="{{ partner.image_path }}" alt="{{ partner.name }}" class="my-4 mx-5 overlay-variant small">
+            <img src="{{ partner.image_path }}" alt="{{ partner.name }}" class="my-4 mx-5 overlay-variant small" />
             {% endfor %}
         </div>
     </div>
@@ -91,8 +90,8 @@ navbar-bg: transparent
 
 <section class="bg-regular border-bottom-2">
     <div class="container py-7 text-center">
-        <h2 class="editable">Al het Laatste</h2>
-        <h5 class="t-secondary mb-6 editable">Nieuws en verhalen</h5>
+        <h2 class="editable" href="/dossiers">Al het Laatste</h2>
+        <h5 class="t-secondary mb-6 editable" href="/dossiers">Nieuws en verhalen</h5>
 
         {% assign featured = site.news | where: 'is_featured', true | sort: date | reverse %}
         {% assign other = site.news | where: 'is_featured', false | sort: date | reverse %}
@@ -101,7 +100,7 @@ navbar-bg: transparent
 
         <div class="row mb-5 text-left">
             <div class="col-md-6 col-lg-4">
-                <img src="{{ item.header_image_path }}" class="img-fluid">
+                <img src="{{ item.header_image_path }}" class="img-fluid" />
             </div>
             <div class="col-md-6 col-lg-8 pt-2">
                 <h3>
@@ -128,8 +127,8 @@ navbar-bg: transparent
 
 <section class="bg-regular">
     <div class="container py-7 text-center">
-        <h2 class="editable">Opleidingen</h2>
-        <h5 class="t-secondary mb-5 editable">Wat wij je kunnen leren</h5>
+        <h2 class="editable" href="/nieuws">Opleidingen</h2>
+        <h5 class="t-secondary mb-5 editable" href="/nieuws">Wat wij je kunnen leren</h5>
         <div class="bg-regular--variant py-7"></div>
         <a href="/opleidingen" class="btn btn-primary mt-5 editable">Bekijk alle opleidingen</a>
     </div>
