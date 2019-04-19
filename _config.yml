@@ -41,3 +41,14 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+
+# CloudCannon options
+_options:
+  layout:
+    hidden: true
+  navbar-style:
+    hidden: true
+  navbar-bg:
+    hidden: true
+  navbar-width:
+    hidden: true
