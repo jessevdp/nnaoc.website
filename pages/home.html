@@ -13,8 +13,8 @@ navbar-bg: transparent
     <div class="background-image overlay-dark" style="background-image:url({{ page.header_image_path }});"></div>
     <main>
         <div class="container">
-            <h4>Welkom bij NNAOC.</h4>
-            <h1>NNAOC is een marktgerichte onderwijs vernieuwende organisatie die maatwerk oplossingen bied op basis van
+            <h4 class="editable">Welkom bij NNAOC.</h4>
+            <h1 class="editable">NNAOC is een marktgerichte onderwijs vernieuwende organisatie die maatwerk oplossingen bied op basis van
                 landelijk erkende opleidingen.</h1>
         </div>
     </main>
@@ -22,10 +22,10 @@ navbar-bg: transparent
 
 <section class="cta bg-regular--variant py-6 py-tablet-7">
     <div class="container text-center">
-        <h2>NNAOC heeft zich als doel gesteld mensen met een
+        <h2 class="editable">NNAOC heeft zich als doel gesteld mensen met een
             grote achterstand tot de arbeidsmarkt op te leiden en te begeleiden naar zo regulier- en zo duurzaam
             mogelijk werk.</h2>
-        <a href="/over-ons" class="btn btn-primary btn-large mt-4">Lees meer over ons</a>
+        <a href="/over-ons" class="btn btn-primary btn-large mt-4 editable">Lees meer over ons</a>
     </div>
 </section>
 
@@ -33,8 +33,8 @@ navbar-bg: transparent
 
 <section class="bg-regular">
     <div class="container py-7 text-center">
-        <h2>Dossiers</h2>
-        <h5 class="t-secondary mb-5">Lorem ipsum dollar sit amet</h5>
+        <h2 class="editable">Dossiers</h2>
+        <h5 class="t-secondary mb-5 editable">Lorem ipsum dollar sit amet</h5>
         <div class="row text-left">
             {% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
             {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
@@ -57,7 +57,7 @@ navbar-bg: transparent
             </div>
             {% endfor %}
         </div>
-        <a href="/dossiers" class="btn btn-primary mt-5">Bekijk alle dossiers</a>
+        <a href="/dossiers" class="btn btn-primary mt-5 editable">Bekijk alle dossiers</a>
     </div>
 </section>
 
@@ -65,20 +65,20 @@ navbar-bg: transparent
 
 <section class="logo-grid bg-primary">
     <div class="container text-center py-6 py-tablet-7">
-        <h1>Erkenningen</h1>
+        <h1 class="editable">Erkenningen</h1>
         <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
             {% for acknowledgement in site.data.acknowledgements %}
             <img src="{{ acknowledgement.image_path }}" alt="{{ acknowledgement.name }}"
                 class="my-4 mx-5  overlay-accent large">
             {% endfor %}
         </div>
-        <h2 class="mt-6">Refenreties van NNAOC</h2>
+        <h2 class="mt-6 editable">Refenreties van NNAOC</h2>
         <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
             {% for reference in site.data.references %}
             <img src="{{ reference.image_path }}" alt="{{ reference.name }}" class="my-4 mx-5 overlay-variant small">
             {% endfor %}
         </div>
-        <h2 class="mt-6">Partners van NNAOC</h2>
+        <h2 class="mt-6 editable">Partners van NNAOC</h2>
         <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
             {% for partner in site.data.partners %}
             <img src="{{ partner.image_path }}" alt="{{ partner.name }}" class="my-4 mx-5 overlay-variant small">
@@ -91,8 +91,8 @@ navbar-bg: transparent
 
 <section class="bg-regular border-bottom-2">
     <div class="container py-7 text-center">
-        <h2>Al het Laatste</h2>
-        <h5 class="t-secondary mb-6">Nieuws en verhalen</h5>
+        <h2 class="editable">Al het Laatste</h2>
+        <h5 class="t-secondary mb-6 editable">Nieuws en verhalen</h5>
 
         {% assign featured = site.news | where: 'is_featured', true | sort: date | reverse %}
         {% assign other = site.news | where: 'is_featured', false | sort: date | reverse %}
@@ -120,7 +120,7 @@ navbar-bg: transparent
 
         {% endfor %}
 
-        <a href="/nieuws" class="btn btn-primary mt-3">Bekijk al het nieuws</a>
+        <a href="/nieuws" class="btn btn-primary mt-3 editable">Bekijk al het nieuws</a>
     </div>
 </section>
 
@@ -128,9 +128,9 @@ navbar-bg: transparent
 
 <section class="bg-regular">
     <div class="container py-7 text-center">
-        <h2>Opleidingen</h2>
-        <h5 class="t-secondary mb-5">Wat wij je kunnen leren</h5>
+        <h2 class="editable">Opleidingen</h2>
+        <h5 class="t-secondary mb-5 editable">Wat wij je kunnen leren</h5>
         <div class="bg-regular--variant py-7"></div>
-        <a href="/opleidingen" class="btn btn-primary mt-5">Bekijk alle opleidingen</a>
+        <a href="/opleidingen" class="btn btn-primary mt-5 editable">Bekijk alle opleidingen</a>
     </div>
 </section>
