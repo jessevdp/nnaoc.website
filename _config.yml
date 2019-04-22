@@ -31,6 +31,10 @@ defaults:
       type: educations
     values:
       layout: education
+      _comments:
+        purpose_text: "Doel"
+        result_text: "Resultaat"
+        target_audience_text: "Doelgroep"
 
 # Build settings
 markdown: kramdown
