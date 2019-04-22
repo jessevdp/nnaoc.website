@@ -14,6 +14,9 @@ collections:
   news:
     output: true
     permalink: "/nieuws/:year/:month/:day/:title"
+  educations:
+    output: true
+    permalink: "/opleidingen/:title"
 
 defaults:
   - scope:
