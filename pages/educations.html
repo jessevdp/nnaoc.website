@@ -1,0 +1,33 @@
+---
+layout: default
+title: Opleidingen
+permalink: /opleidingen/
+
+navbar-style: dark
+navbar-bg: regular
+---
+
+<header class="margin-navbar-clear pt-6 pt-tablet-7 bg-regular text-center">
+    <div class="container">
+        <h1 class="editable">Opleidingen</h1>
+        <h5 class="editable">Wat wij je kunnen leren</h5>
+    </div>
+</header>
+
+<main class="py-4 py-tablet-5">
+    <div class="container">
+        <div class="row">
+            {% for education in site.educations %}
+            <div class="col-md-6 col-lg-4">
+                <div class="p-4">
+                    <h3>{{ education.title }}</h3>
+                    <p class="text-small">
+                        {{ education.content | markdownify | strip_html | truncatewords: 38, " ..." }}
+                    </p>
+                    <a href="{{ education.url }}" class="btn btn-light mt-3">Lees meer</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
