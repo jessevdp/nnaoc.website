@@ -126,11 +126,27 @@ navbar-bg: transparent
 
 {% endunless %}
 
+{% unless site.educations == empty %}
+
 <section class="bg-regular">
     <div class="container py-7 text-center">
         <h2 class="editable">Opleidingen</h2>
         <h5 class="t-secondary mb-5 editable">Wat wij je kunnen leren</h5>
-        <div class="bg-regular--variant py-7"></div>
+        <div class="row text-left">
+            {% for education in site.educations limit: 3 %}
+                <div class="col-lg-4">
+                    <div class="p-4">
+                        <h3>{{ education.title }}</h3>
+                        <p class="text-small">
+                            {{ education.content | markdownify | strip_html | truncatewords: 38, " ..." }}
+                        </p>
+                        <a href="{{ education.url }}" class="btn btn-light mt-3">Lees meer</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
         <a href="/opleidingen" class="btn btn-primary mt-5 editable">Bekijk alle opleidingen</a>
     </div>
 </section>
+
+{% endunless %}
