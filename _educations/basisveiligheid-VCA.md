@@ -1,5 +1,5 @@
 ---
-title: "basisveiligheid (VCA)"
+title: "Basisveiligheid (VCA)"
 start: "Start bij voldoende deelname."
 duration: "5 dagdelen (afh. wensen opdrachtgever)"
 price: "€399,- (incl. lesmateriaal en examen)"

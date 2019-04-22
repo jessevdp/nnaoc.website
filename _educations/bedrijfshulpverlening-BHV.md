@@ -8,6 +8,6 @@ result_text: "De training wordt afgesloten met een kort examen. De deelnemer die
 target_audience_text: "Deze training is gericht op medewerkers van bedrijven en zelfstandigen die werknemers, stagiaires of andere externe arbeidskrachten in dienst hebben of werkzaam zijn in publiek toegankelijke ruimten zoals winkels of horecagelegenheden."
 ---
 
-De Arbowet geeft aan dat op elk bedrijf met personeel Ã©Ã©n of meerdere opgeleide bedrijfshulpverleners(s) aanwezig moet(en) zijn. NNAOC verzorgt deze training bij u op het bedrijf of in uw directe omgeving. Tijdens deze training leert u de eerste levensreddende handelingen te verrichten als: reanimeren, Automatische Externe Defibrillator (AED), het geven van eerste hulp bij bewustzijn- en ademhalingsstoornissen, het aanleggen van verbanden (bijvoorbeeld wonddrukverband bij ernstige bloedingen).
+De Arbowet geeft aan dat op elk bedrijf met personeel één of meerdere opgeleide bedrijfshulpverleners(s) aanwezig moet(en) zijn. NNAOC verzorgt deze training bij u op het bedrijf of in uw directe omgeving. Tijdens deze training leert u de eerste levensreddende handelingen te verrichten als: reanimeren, Automatische Externe Defibrillator (AED), het geven van eerste hulp bij bewustzijn- en ademhalingsstoornissen, het aanleggen van verbanden (bijvoorbeeld wonddrukverband bij ernstige bloedingen).
 
 Daarnaast worden thema's behandeld als: hoe te handelen bij brand en rookontwikkeling, het gebruik van kleine blusmiddelen, ontruiming, alarmering & communicatie en het verlenen van eerste nazorg van slachtoffers bij brand.
