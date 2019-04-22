@@ -27,6 +27,10 @@ defaults:
       type: news
     values:
       layout: news
+  - scope:
+      type: educations
+    values:
+      layout: education
 
 # Build settings
 markdown: kramdown
