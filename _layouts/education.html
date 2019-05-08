@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include navigation/navbar.html %}
+
+    <header class="margin-navbar-clear py-5 py-tablet-6 bg-regular border-bottom-2">
+        <div class="container">
+            <h4 class="text-desktop-center">Opleiding</h4>
+            <h1 class="text-desktop-center mt-0">{{ page.title }}</h1>
+
+            <div class="row mt-5 mt-tablet-6">
+                <div class="col-lg-8 pr-tablet-6">
+                    <h4>Doel</h4>
+                    <p>{{ page.purpose_text }}</p>
+                    <h4>Resultaat</h4>
+                    <p>{{ page.result_text }}</p>
+                    <h4>Doelgroep</h4>
+                    <p>{{ page.target_audience_text }}</p>
+                </div>
+                <div class="col-lg-4 mt-3 mt-desktop-0">
+                    <h4>Start</h4>
+                    <p>{{ page.start }}</p>
+                    <h4>Duur</h4>
+                    <p>{{ page.duration }}</p>
+                    <h4>Prijs</h4>
+                    <p>{{ page.price }}</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-5 py-tablet-6 bg-regular">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8">
+                    <h2>Inhoud</h2>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include cta.html %}
+
+    {% include footer.html %}
+</body>
+
+{% include scripts.html %}
+
+</html>

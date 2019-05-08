@@ -1,0 +1,93 @@
+@import "_variables/spacers";
+@import "_mixins/fonts";
+@import "_mixins/media-queries";
+
+body,
+p,
+h1,
+h2,
+h3 {
+  @include primary-font;
+  font-weight: 400;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 2);
+  }
+}
+
+h1 {
+  font-size: 4.8rem;
+  margin-bottom: map-get($spacers, 2);
+
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 5);
+  }
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+
+h2,
+h3 {
+  margin-bottom: map-get($spacers, 2);
+
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 4);
+  }
+}
+
+h4,
+h5,
+h6 {
+  @include secondary-font;
+  margin-bottom: map-get($spacers, 2);
+
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 3);
+  }
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5,
+h6 {
+  font-size: 1.2rem;
+}
+
+@mixin font-size-classes($infix) {
+  .text#{$infix}-small {
+    font-size: 1.4rem;
+  }
+
+  .text#{$infix}-regular {
+    font-size: 1.6rem;
+  }
+
+  .text#{$infix}-large {
+    font-size: 2rem;
+  }
+}
+
+@include font-size-classes("");
+@include tablet {
+  @include font-size-classes("-tablet");
+}
+@include desktop {
+  @include font-size-classes("-desktop");
+}
+@include large-desktop {
+  @include font-size-classes("-large-desktop");
+}

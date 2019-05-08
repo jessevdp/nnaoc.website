@@ -1,0 +1,85 @@
+@import "_variables/colors";
+
+html,
+body,
+:root {
+  background: $background;
+  color: $on-background--secondary;
+}
+
+@mixin primary-text($color) {
+  .t-regular,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color;
+  }
+}
+
+@mixin secondary-text($color) {
+  .t-secondary,
+  p {
+    color: $color;
+  }
+}
+
+@mixin muted-text($color) {
+  .t-muted {
+    color: $color;
+    opacity: .7;
+  }
+}
+
+@include primary-text($on-background);
+@include secondary-text($on-background--secondary);
+@include muted-text($on-background--secondary);
+
+@mixin border($color) {
+  @each $variant in ("", "-top", "-bottom", "-left", "-right") {
+    @each $width, $size in ("": 0.1rem, "-2": 0.2rem) {
+      .border#{$variant}#{$width} {
+        border#{$variant}: $size solid $color;
+      }
+    }
+  }
+}
+
+@include border($on-background--divider);
+
+@mixin text($name, $color) {
+  .t-#{$name} {
+    color: $color;
+  }
+}
+
+@include text("primary", $primary);
+@include text("primary--variant", $primary--variant);
+@include text("accent", $accent);
+@include text("error", $error);
+
+@mixin bg($name, $background, $text, $text--secondary, $divider) {
+  .bg-#{$name} {
+    color: $text;
+    background-color: $background;
+    @include primary-text($text);
+    @include secondary-text($text--secondary);
+    @include muted-text($text--secondary);
+    @include border($divider);
+  }
+}
+
+@include bg("regular", $background, $on-background, $on-background--secondary, $on-background--divider);
+@include bg(
+  "regular--variant",
+  $background--variant,
+  $on-background-variant,
+  $on-background-variant--secondary,
+  $on-background-variant--divider
+);
+@include bg("primary", $primary, $on-primary, $on-primary--secondary, $on-primary--divider);
+@include bg("primary--variant", $primary--variant, $on-primary, $on-primary--secondary, $on-primary--divider);
+@include bg("accent", $accent, $on-accent, $on-accent--secondary, $on-accent--divider);
+@include bg("error", $error, $on-error, $on-error--secondary, $on-error--divider);

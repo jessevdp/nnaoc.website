@@ -1,0 +1,65 @@
+safe: true
+strict_front_matter: true
+timezone: "Europe/Amsterdam"
+
+title: "NNAOC"
+date_founded: 2013-02-01
+
+logo_image_path: /assets/logo/logo.svg
+
+collections:
+  projects:
+    output: true
+    permalink: "/dossiers/:year/:month/:day/:title"
+  news:
+    output: true
+    permalink: "/nieuws/:year/:month/:day/:title"
+  educations:
+    output: true
+    permalink: "/opleidingen/:title"
+
+defaults:
+  - scope:
+      type: projects
+    values:
+      layout: project
+  - scope:
+      type: news
+    values:
+      layout: news
+  - scope:
+      type: educations
+    values:
+      layout: education
+      _comments:
+        purpose_text: "Doel"
+        result_text: "Resultaat"
+        target_audience_text: "Doelgroep"
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass/
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# CloudCannon options
+_options:
+  layout:
+    hidden: true
+  navbar-style:
+    hidden: true
+  navbar-bg:
+    hidden: true
+  navbar-width:
+    hidden: true

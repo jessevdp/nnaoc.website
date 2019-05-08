@@ -1,0 +1,152 @@
+---
+layout: default
+title: Home
+permalink: /
+
+header_image_path: assets/home/header.jpg
+
+navbar-style: light
+navbar-bg: transparent
+---
+
+<header class="home bg-primary--variant">
+    <div class="background-image overlay-dark" style="background-image:url({{ page.header_image_path }});"></div>
+    <main>
+        <div class="container">
+            <h4 class="editable">Welkom bij NNAOC.</h4>
+            <h1 class="editable">NNAOC is een marktgerichte onderwijs vernieuwende organisatie die maatwerk oplossingen bied op basis van
+                landelijk erkende opleidingen.</h1>
+        </div>
+    </main>
+</header>
+
+<section class="cta bg-regular--variant py-6 py-tablet-7">
+    <div class="container text-center">
+        <h2 class="editable">NNAOC heeft zich als doel gesteld mensen met een
+            grote achterstand tot de arbeidsmarkt op te leiden en te begeleiden naar zo regulier- en zo duurzaam
+            mogelijk werk.</h2>
+        <a href="/over-ons" class="btn btn-primary btn-large mt-4 editable">Lees meer over ons</a>
+    </div>
+</section>
+
+{% unless site.projects == empty %}
+
+<section class="bg-regular">
+    <div class="container py-7 text-center">
+        <h2 class="editable">Dossiers</h2>
+        <h5 class="t-secondary mb-5 editable">Lorem ipsum dollar sit amet</h5>
+        <div class="row text-left">
+            {% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
+            {% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
+            {% assign projects = featured | concat: other %}
+            {% for project in projects limit: 3 %}
+            <div class="col-lg-4">
+                <div class="p-4">
+                    <h3>
+                        {{ project.title }}
+                        {% if project.is_featured %}
+                        <span class="t-accent">*</span>
+                        {% endif%}
+                    </h3>
+                    <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
+                    <p class="text-small">
+                        {{ project.content | markdownify | strip_html | truncatewords: 38, " ..." }}
+                    </p>
+                    <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/dossiers" class="btn btn-primary mt-5 editable">Bekijk alle dossiers</a>
+    </div>
+</section>
+
+{% endunless %}
+
+<section class="logo-grid bg-primary">
+    <div class="container text-center py-6 py-tablet-7">
+        <h1 class="editable">Erkenningen</h1>
+        <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+            {% for acknowledgement in site.data.acknowledgements %}
+            <img src="{{ acknowledgement.image_path }}" alt="{{ acknowledgement.name }}"
+                class="my-4 mx-5  overlay-accent large">
+            {% endfor %}
+        </div>
+        <h2 class="mt-6 editable">Refenreties van NNAOC</h2>
+        <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+            {% for reference in site.data.references %}
+            <img src="{{ reference.image_path }}" alt="{{ reference.name }}" class="my-4 mx-5 overlay-variant small">
+            {% endfor %}
+        </div>
+        <h2 class="mt-6 editable">Partners van NNAOC</h2>
+        <div class="d-flex justify-content-center align-items-center flex-wrap mt-5">
+            {% for partner in site.data.partners %}
+            <img src="{{ partner.image_path }}" alt="{{ partner.name }}" class="my-4 mx-5 overlay-variant small">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% unless site.news == empty %}
+
+<section class="bg-regular border-bottom-2">
+    <div class="container py-7 text-center">
+        <h2 class="editable">Al het Laatste</h2>
+        <h5 class="t-secondary mb-6 editable">Nieuws en verhalen</h5>
+
+        {% assign featured = site.news | where: 'is_featured', true | sort: date | reverse %}
+        {% assign other = site.news | where: 'is_featured', false | sort: date | reverse %}
+        {% assign news = featured | concat: other %}
+        {% for item in news limit: 3 %}
+
+        <div class="row mb-5 text-left">
+            <div class="col-md-6 col-lg-4">
+                <img src="{{ item.header_image_path }}" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-lg-8 pt-2">
+                <h3>
+                    {{ item.title }}
+                    {% if item.is_featured %}
+                        <span class="t-accent">*</span>
+                    {% endif%}
+                </h3>
+                <h5 class="mt-0">{{ item.author }} &mdash; {{ item.date | date: '%d/%m/%Y' }}</h5>
+                <p class="text-small mt-3">
+                    {{ item.content | markdownify | strip_html | truncatewords: 30, " ..." }}
+                </p>
+                <a href="{{ item.url }}" class="btn btn-light btn-small mt-3">Lees meer</a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <a href="/nieuws" class="btn btn-primary mt-3 editable">Bekijk al het nieuws</a>
+    </div>
+</section>
+
+{% endunless %}
+
+{% unless site.educations == empty %}
+
+<section class="bg-regular">
+    <div class="container py-7 text-center">
+        <h2 class="editable">Opleidingen</h2>
+        <h5 class="t-secondary mb-5 editable">Wat wij je kunnen leren</h5>
+        <div class="row text-left">
+            {% for education in site.educations limit: 3 %}
+                <div class="col-lg-4">
+                    <div class="p-4">
+                        <h3>{{ education.title }}</h3>
+                        <p class="text-small">
+                            {{ education.content | markdownify | strip_html | truncatewords: 38, " ..." }}
+                        </p>
+                        <a href="{{ education.url }}" class="btn btn-light mt-3">Lees meer</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/opleidingen" class="btn btn-primary mt-5 editable">Bekijk alle opleidingen</a>
+    </div>
+</section>
+
+{% endunless %}

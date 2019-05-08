@@ -1,0 +1,9 @@
+/*
+ * The following sizes represent the screen width at which a certain group
+ * of devices start. Mobile phones are all devices up and untill $tablet-width.
+ * Tablets are devices from $tablet-width up and untill $desktop-width. Etc.
+ */
+
+$tablet-width: 768px;
+$desktop-width: 992px;
+$large-desktop-width: 1200px;

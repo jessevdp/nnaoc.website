@@ -1,0 +1,43 @@
+<!-- Default values for settings -->
+{% assign style = include.style | default: "dark" %}
+{% assign background = include.background | default: "regular" %}
+{% assign width = include.width | default: "narrow" %}
+
+<!-- Parse width setting -->
+{% if width == "wide" %}
+{% assign container = "container-fluid" %}
+{% else %}
+{% assign container = "container" %}
+{% endif %}
+
+<nav class="navbar navbar-{{ style }} navbar-bg-{{ background }} navbar-top">
+    <div class="{{ container }}">
+        <a href="{{ site.baseurl }}/" class="navbar-brand">
+            {% if site.logo_image_path %}
+            <img src="{{ site.logo_image_path }}" alt="brand logo">
+            {% else %}
+            {{ site.title }}
+            {% endif %}
+        </a>
+        <div id="navbar-content" class="navbar-content">
+            <ul class="navbar-nav">
+                {%- for item in site.data.navigation -%}
+
+                {% if item.link == page.url %}
+                {% assign active = " active" %}
+                {% else %}
+                {% assign active = "" %}
+                {% endif %}
+
+                <li class="nav-item">
+                    <a href="{{ item.link }}" class="nav-link{{ active }}">{{ item.name }}</a>
+                </li>
+
+                {%- endfor -%}
+            </ul>
+        </div>
+        <button class="navbar-toggler" data-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>

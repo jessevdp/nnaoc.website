@@ -1,0 +1,108 @@
+@import "_variables/colors";
+@import "_variables/spacers";
+@import "_mixins/fonts";
+
+a.btn,
+button.btn,
+input[type="button"].btn,
+input[type="submit"].btn,
+input[type="reset"].btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  @include secondary-font;
+
+  font-size: 1.2rem;
+  text-align: center;
+
+  color: inherit;
+  background-color: transparent;
+  display: inline-block;
+  border: 0.1rem solid transparent;
+  padding: map-get($spacers, 2) map-get($spacers, 3);
+
+  /* ======================= *
+   *  VARIANTS
+   * ======================= */
+
+  // Color variants
+
+  &.btn-primary {
+    color: $on-primary;
+    background: $primary;
+    border-color: $primary;
+  }
+
+  &.btn-primary--variant {
+    color: $on-primary;
+    background: $primary--variant;
+    border-color: $primary--variant;
+  }
+
+  &.btn-accent {
+    color: $on-accent;
+    background: $accent;
+    border-color: $accent;
+  }
+
+  &.btn-error {
+    color: $on-error;
+    background: $error;
+    border-color: $error;
+  }
+
+  &.btn-light {
+    color: $on-background;
+    background: $on-background-variant--secondary;
+    border-color: $on-background-variant--secondary;
+  }
+
+  &.btn-dark {
+    color: $on-background-variant;
+    background: $background--variant;
+    border-color: $background--variant;
+  }
+
+  // Sizing
+
+  &.btn-large {
+    font-size: 1.6rem;
+    padding: map-get($spacers, 3) map-get($spacers, 5);
+  }
+
+  &.btn-small {
+    font-size: 1rem;
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+  }
+
+  // Block level buttons
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+
+    &.btn-large {
+      padding-top: map-get($spacers, 3);
+      padding-bottom: map-get($spacers, 3);
+    }
+  }
+
+  /* ======================= *
+   *  INTERACTIVE STATES
+   * ======================= */
+
+  // Disabled
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,22 @@
+$primary: #1976d2;
+$primary--variant: #64b5f6;
+$accent: #ff6e40;
+$background: #fafafa;
+$background--variant: #363636;
+$error: #e61725;
+
+$on-primary: #fff;
+$on-primary--secondary: #e6e6e6;
+$on-primary--divider: $primary--variant;
+$on-accent: #fff;
+$on-accent--secondary: #e6e6e6;
+$on-accent--divider: $primary;
+$on-background: #000;
+$on-background--secondary: #363636;
+$on-background--divider: #e6e6e6;
+$on-background-variant: #fff;
+$on-background-variant--secondary: #ccc;
+$on-background-variant--divider: #555;
+$on-error: #fff;
+$on-error--secondary: #e6e6e6;
+$on-error--divider: darken(#e61725, 8);

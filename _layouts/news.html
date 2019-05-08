@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+    {% include navigation/navbar.html %}
+
+    <header class="margin-navbar-clear">
+        <div class="container pt-4 pb-5 pb-tablet-6 border-bottom-2">
+            <img src="{{ page.header_image_path }}" alt="header" class="img-thumbnail">
+
+            <h5 class="mb-0 mt-5">{{ page.date | date: "%d/%m/%Y" }}</h5>
+            <h1 class="mt-0">{{ page.title }}</h1>
+            
+            {% if page.author_link %}
+            <p class="text-large">Geschreven door: <a href="{{ page.author_link }}" target="_blank" rel="noopener noreferrer">{{ page.author }}</a></p>
+            {% else %}
+            <p class="text-large">Geschreven door: {{ page.author }}</p>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container py-5 py-tablet-6">
+        <div class="row">
+            <div class="col-md-7">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+
+  {% include cta.html %}
+
+  {% include footer.html %}
+</body>
+
+{% include scripts.html %}
+
+</html>

@@ -1,0 +1,74 @@
+---
+layout: default
+title: Dossiers
+permalink: /dossiers/
+
+featured_number: 2
+
+navbar-style: dark
+navbar-bg: regular
+---
+
+<header class="margin-navbar-clear py-6 py-tablet-7 bg-primary text-center">
+    <div class="container">
+        <h1 class="editable">Dossiers</h1>
+        <h5 class="editable">Lorem ipsum dollar sit amet</h5>
+    </div>
+</header>
+
+{% assign featured = site.projects | where: 'is_featured', true | sort: date | reverse %}
+{% assign other = site.projects | where: 'is_featured', false | sort: date | reverse %}
+{% assign projects = featured | concat: other %}
+
+<section class="py-5 py-tablet-6 bg-regular--variant">
+    <div class="container">
+        <div class="row">
+            {% for project in projects limit: page.featured_number %}
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h2 class="mb-0">
+                        {{ project.title }}
+                        {% if project.is_featured %}
+                        <span class="t-accent">*</span>
+                        {% endif%}
+                    </h2>
+                    <h5 class="mt-1 mb-3 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h5>
+                    <p>
+                        {{ project.content | markdownify | strip_html | truncatewords: 50, " ..." }}
+                    </p>
+                    <a href="{{ project.url }}" class="btn btn-accent mt-3">Lees meer</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% assign count = projects | size %}
+{% unless count <= page.featured_number %}
+
+<main class="py-4 py-tablet-5">
+    <div class="container">
+        <div class="row">
+            {% for project in projects offset: page.featured_number %}
+            <div class="col-md-6 col-lg-4">
+                <div class="p-4">
+                    <h3>
+                        {{ project.title }}
+                        {% if project.is_featured %}
+                        <span class="t-accent">*</span>
+                        {% endif%}
+                    </h3>
+                    <h6 class="mt-1 mb-2 t-secondary">{{ project.date | date: '%d/%m/%Y' }}</h6>
+                    <p class="text-small">
+                        {{ project.content | markdownify | strip_html | truncatewords: 40, " ..." }}
+                    </p>
+                    <a href="{{ project.url }}" class="btn btn-light mt-3">Lees meer</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endunless %}
