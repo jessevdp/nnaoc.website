@@ -1,20 +1,20 @@
+- name: Nationaal Coördinator Groningen
+  image_path: /uploads/ncg.png
+- name: Centrum Veilig Wonen
+  image_path: /uploads/cvw.jpg
 - name: WesterKwartier
   image_path: /assets/partners/westerkwartier.png
-
 - name: DynaMiek
   image_path: /assets/partners/dynamiek.png
-
 - name: Arcadis
   image_path: /assets/partners/arcadis.png
-
 - name: Nordwin
   image_path: /assets/partners/nordwin.png
-
 - name: Wedeka
   image_path: /assets/partners/wedeka.png
-
 - name: De Kompanjie
   image_path: /assets/partners/de-kompanjie.png
-
 - name: De Machinist
   image_path: /assets/partners/de-machinist.png
+- name:
+  image_path:

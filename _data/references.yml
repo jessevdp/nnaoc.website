@@ -1,23 +1,22 @@
+- name: Nationaal Coördinator Groningen
+  image_path: /uploads/ncg.png
+- name: Centrum Veilig Wonen
+  image_path: /uploads/cvw.png
 - name: Thermo Noord
   image_path: /assets/references/thermo-noord.png
-
 - name: Plieger
-  image_path: /assets/references/plieger.png
-
+  image_path: /uploads/plieger-logo.jpg
 - name: Provincie Groningen
   image_path: /assets/references/provincie-groningen.png
-
 - name: Fundament All Media
   image_path: /assets/references/fundament-all-media.png
-
 - name: Gemeente Veendam
   image_path: /assets/references/gemeente-veendam.png
-
 - name: De Machinist
   image_path: /assets/references/de-machinist.png
-
 - name: Hogeschool VHL
   image_path: /assets/references/vhl.png
-
 - name: Radyus
   image_path: /assets/references/radyus.png
+- name: Alfa college
+  image_path:

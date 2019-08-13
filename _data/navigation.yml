@@ -1,14 +1,10 @@
 - link: /over-ons/
   name: Over Ons
-
-- link: /opleidingen/
-  name: Opleidingen
-
-- link: /nieuws/
-  name: Nieuws
-
 - link: /dossiers/
   name: Dossiers
-
+- link: /nieuws/
+  name: Nieuws
+- link: /opleidingen/
+  name: Opleidingen
 - link: /contact/
   name: Contact
